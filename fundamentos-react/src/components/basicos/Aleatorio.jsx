@@ -1,10 +1,16 @@
 import React from "react";
 
-const nTest = (Math.floor(Math.random*20)-1)
-
-export default function aleatorio () {
-    const nTest = (Math.floor(Math.random*20)-1)
-    return <div>
-                <h1>O número aletório é: { nTest }</h1>
+// eslint-disable-next-line
+export default (props) => {
+    // eslint-disable-next-line
+    const { min, max } = props;
+    const aletorio = (Math.floor(Math.random()* (max - min)) + min);
+    return (
+            <div>
+                <h2>Valor Aleatório</h2>
+                <p><strong>Valor Mínimo: </strong> {min} </p>
+                <p><strong>Valor Máximo: </strong> {max} </p>
+                <p><strong>Valor Escolhido é: </strong> {aletorio} </p>                
             </div>
-}
+    );
+};
